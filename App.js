@@ -5,6 +5,7 @@ import ListScreen from './src/screen/ListScreen';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import ImageScreen from './src/screen/ImageScreen';
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -12,8 +13,8 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name='MainScreen' component={MainScreen} />
-
         <Stack.Screen name='ListScreen' component={ListScreen} />
+        <Stack.Screen name='ImageScreen' component={ImageScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   )
