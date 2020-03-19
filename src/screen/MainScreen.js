@@ -11,6 +11,9 @@ const MainScreen = ({ navigation }) => {
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('ImageScreen')}>
                 <Text style={styles.text}>To Image Screen</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('ColorScreen')}>
+                <Text style={styles.text}>To Color Screen</Text>
+            </TouchableOpacity>
         </View>
     )
 }
