@@ -14,6 +14,9 @@ const MainScreen = ({ navigation }) => {
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('ColorScreen')}>
                 <Text style={styles.text}>To Color Screen</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('ColorScreenReducer')}>
+                <Text style={styles.text}>To Color Screen Reducer Version</Text>
+            </TouchableOpacity>
         </View>
     )
 }
@@ -25,7 +28,7 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start'
     },
     button: {
-        width: 200,
+        width: 300,
         height: 50,
         backgroundColor: 'teal',
         margin: 5,
