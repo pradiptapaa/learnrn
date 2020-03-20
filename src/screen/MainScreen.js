@@ -20,6 +20,9 @@ const MainScreen = ({ navigation }) => {
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('TextInputScreen')}>
                 <Text style={styles.text}>To TextInput Screen</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('LayoutScreen')}>
+                <Text style={styles.text}>To Layout Screen</Text>
+            </TouchableOpacity>
         </View>
     )
 }
