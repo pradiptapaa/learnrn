@@ -17,6 +17,9 @@ const MainScreen = ({ navigation }) => {
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('ColorScreenReducer')}>
                 <Text style={styles.text}>To Color Screen Reducer Version</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('TextInputScreen')}>
+                <Text style={styles.text}>To TextInput Screen</Text>
+            </TouchableOpacity>
         </View>
     )
 }

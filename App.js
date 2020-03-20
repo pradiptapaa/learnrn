@@ -8,6 +8,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import ImageScreen from './src/screen/ImageScreen';
 import ColorScreen from './src/screen/ColorScreen';
 import ColorScreenReducer from './src/screen/ColorScreenReducer';
+import TextInputScreen from './src/screen/TextInputScreen';
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
         <Stack.Screen name='ImageScreen' component={ImageScreen}/>
         <Stack.Screen name='ColorScreen' component={ColorScreen}/>
         <Stack.Screen name='ColorScreenReducer' component={ColorScreenReducer}/>
+        <Stack.Screen name='TextInputScreen' component={TextInputScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   )
