@@ -10,6 +10,7 @@ import ColorScreen from './src/screen/ColorScreen';
 import ColorScreenReducer from './src/screen/ColorScreenReducer';
 import TextInputScreen from './src/screen/TextInputScreen';
 import LayoutScreen from './src/screen/LayoutScreen';
+import SearchScreen from './src/screen/SearchScreen';
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -23,6 +24,8 @@ const App = () => {
         <Stack.Screen name='ColorScreenReducer' component={ColorScreenReducer}/>
         <Stack.Screen name='TextInputScreen' component={TextInputScreen}/>
         <Stack.Screen name='LayoutScreen' component={LayoutScreen}/>
+        <Stack.Screen name='SearchScreen' component={SearchScreen}/>
+
       </Stack.Navigator>
     </NavigationContainer>
   )
