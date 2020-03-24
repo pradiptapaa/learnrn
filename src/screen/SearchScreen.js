@@ -2,9 +2,16 @@ import React, { useState } from 'react'
 import { View, StyleSheet, TextInput, Text } from 'react-native';
 import SearchBar from '../component/SearchBar';
 import useResult from '../hook/useResult';
+import Results from '../component/Results';
 const SearchScreen = () => {
     const [term, setTerm] = useState("");
     const [searchApi, result, errorMessage] = useResult();
+
+    const filterByLanguage = (language) =>{
+        return result.filter(result =>{
+            return result.original_language === language;
+        })
+    }
     return (
         <View>
             <SearchBar
@@ -17,6 +24,9 @@ const SearchScreen = () => {
                 :
                 null}
             <Text style={styles.result}>There are {result.length} movies for keyword: {term}</Text>
+            <Results result={filterByLanguage('id')} title="Indonesian Language Movies"/>
+            <Results result={filterByLanguage('en')} title="English Language Movies"/>
+            <Results result={filterByLanguage('fr')} title="Franch Language Movies"/>
         </View>
     )
 };
