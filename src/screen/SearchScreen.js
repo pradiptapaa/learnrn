@@ -26,9 +26,9 @@ const SearchScreen = () => {
                 :
                 null}
             <Text style={styles.result}>There are {result.length} movies for keyword: {term}</Text>
-            <Results result={filterByLanguage('id')} title="Indonesian Language Movies"/>
-            <Results result={filterByLanguage('en')} title="English Language Movies"/>
-            <Results result={filterByLanguage('fr')} title="Franch Language Movies"/>
+            <Results result={filterByLanguage('id')} title="Indonesian Language Movies" />
+            <Results result={filterByLanguage('en')} title="English Language Movies" />
+            <Results result={filterByLanguage('fr')} title="Franch Language Movies" />
         </ScrollView>
     )
 };
