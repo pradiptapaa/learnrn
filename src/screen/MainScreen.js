@@ -26,6 +26,9 @@ const MainScreen = ({ navigation }) => {
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('SearchScreen')}>
                 <Text style={styles.text}>To Search Screen</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('IndexScreen')}>
+                <Text style={styles.text}>To Index Screen</Text>
+            </TouchableOpacity>
         </View>
     )
 }

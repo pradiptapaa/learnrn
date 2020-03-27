@@ -12,6 +12,8 @@ import TextInputScreen from './src/screen/TextInputScreen';
 import LayoutScreen from './src/screen/LayoutScreen';
 import SearchScreen from './src/screen/SearchScreen';
 import SearchDetailScreen from './src/screen/SearchDetailScreen';
+import IndexScreen from './src/screen/IndexScreen';
+import { AppProvider } from './src/context/AppContext'
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -20,17 +22,22 @@ const App = () => {
       <Stack.Navigator>
         <Stack.Screen name='MainScreen' component={MainScreen} />
         <Stack.Screen name='ListScreen' component={ListScreen} />
-        <Stack.Screen name='ImageScreen' component={ImageScreen}/>
-        <Stack.Screen name='ColorScreen' component={ColorScreen}/>
-        <Stack.Screen name='ColorScreenReducer' component={ColorScreenReducer}/>
-        <Stack.Screen name='TextInputScreen' component={TextInputScreen}/>
-        <Stack.Screen name='LayoutScreen' component={LayoutScreen}/>
-        <Stack.Screen name='SearchScreen' component={SearchScreen}/>
-        <Stack.Screen name='SearchDetailScreen' component={SearchDetailScreen}/>
+        <Stack.Screen name='ImageScreen' component={ImageScreen} />
+        <Stack.Screen name='ColorScreen' component={ColorScreen} />
+        <Stack.Screen name='ColorScreenReducer' component={ColorScreenReducer} />
+        <Stack.Screen name='TextInputScreen' component={TextInputScreen} />
+        <Stack.Screen name='LayoutScreen' component={LayoutScreen} />
+        <Stack.Screen name='SearchScreen' component={SearchScreen} />
+        <Stack.Screen name='SearchDetailScreen' component={SearchDetailScreen} />
+        <Stack.Screen name='IndexScreen' component={IndexScreen} />
+
 
       </Stack.Navigator>
     </NavigationContainer>
   )
 }
 
-export default App;
+export default () => {
+  return <AppProvider><App />
+  </AppProvider>
+}
