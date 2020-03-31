@@ -13,7 +13,9 @@ import LayoutScreen from './src/screen/LayoutScreen';
 import SearchScreen from './src/screen/SearchScreen';
 import SearchDetailScreen from './src/screen/SearchDetailScreen';
 import IndexScreen from './src/screen/IndexScreen';
-import { AppProvider } from './src/context/AppContext'
+// The normal context ...
+// import { AppProvider } from './src/context/AppContext'
+import { Provider } from './src/context/AutomaticAppContext';
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -36,8 +38,13 @@ const App = () => {
     </NavigationContainer>
   )
 }
+//Change to automatic context ...
+// export default () => {
+//   return <AppProvider><App />
+//   </AppProvider>
+// }
 
 export default () => {
-  return <AppProvider><App />
-  </AppProvider>
+  return <Provider><App />
+  </Provider>
 }
