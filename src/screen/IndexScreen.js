@@ -12,7 +12,16 @@ const IndexScreen = ({ navigation }) => {
     // const {data,addBlogPost} = useContext(Context)
     const { state, addBlogPost, deleteBlogPost } = useContext(Context)
 
+    navigation.setOptions({
+        headerRight: () => (
+            <TouchableOpacity onPress={() => navigation.navigate('CreationScreen')}>
+            <Icon name="plus" style={styles.icon}/>
+            </TouchableOpacity>
+        ),
+      })
+
     return (
+        
         <View>
             <Text>List from context:</Text>
             <Button title={"Add Blog Post"} onPress={addBlogPost} />
@@ -33,7 +42,10 @@ const IndexScreen = ({ navigation }) => {
                 } />
         </View>
     )
+    
 }
+
+
 
 const styles = StyleSheet.create({
     row: {
@@ -41,13 +53,15 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         paddingVertical: 20,
         borderTopWidth: 1,
-        borderColor: 'gray'
+        borderColor: 'gray',
+        paddingRight: 10
     },
     title: {
         fontSize: 18
     },
     icon: {
-        fontSize: 24
+        fontSize: 24,
+        paddingHorizontal: 10
     }
 
 })

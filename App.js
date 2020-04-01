@@ -17,6 +17,7 @@ import IndexScreen from './src/screen/IndexScreen';
 // import { AppProvider } from './src/context/AppContext'
 import { Provider } from './src/context/AutomaticAppContext';
 import IndexScreenDetails from './src/screen/IndexScreenDetails';
+import CreationScreen from './src/screen/CreationScreen';
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -34,6 +35,7 @@ const App = () => {
         <Stack.Screen name='SearchDetailScreen' component={SearchDetailScreen} />
         <Stack.Screen name='IndexScreen' component={IndexScreen} />
         <Stack.Screen name='IndexScreenDetails' component={IndexScreenDetails}/>
+        <Stack.Screen name='CreationScreen' component={CreationScreen}/>
 
 
       </Stack.Navigator>
