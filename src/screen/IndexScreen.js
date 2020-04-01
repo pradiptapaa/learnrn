@@ -7,45 +7,47 @@ import { Context } from '../context/AutomaticAppContext'
 import Icon from 'react-native-vector-icons/Feather';
 
 
-const IndexScreen = () => {
+const IndexScreen = ({ navigation }) => {
     // Change data to state
     // const {data,addBlogPost} = useContext(Context)
-    const {state,addBlogPost, deleteBlogPost} = useContext(Context)
+    const { state, addBlogPost, deleteBlogPost } = useContext(Context)
 
     return (
         <View>
             <Text>List from context:</Text>
-            <Button title={"Add Blog Post"} onPress={addBlogPost}/>
+            <Button title={"Add Blog Post"} onPress={addBlogPost} />
             <FlatList
                 // data={data}
                 data={state}
                 keyExtractor={(blogPost) => blogPost.id}
                 renderItem={({ item }) => {
-                    return <View style={styles.row}>
-                        <Text style={styles.title}>{item.title} - {item.id}</Text>
-                        <TouchableOpacity onPress={()=> deleteBlogPost(item.id)}>
-                        <Icon name="trash" style={styles.title}/>
-                        </TouchableOpacity>
+                    return <TouchableOpacity onPress={() => navigation.navigate('IndexScreenDetails',{id: item.id})}>
+                        <View style={styles.row}>
+                            <Text style={styles.title}>{item.title} - {item.id}</Text>
+                            <TouchableOpacity onPress={() => deleteBlogPost(item.id)}>
+                                <Icon name="trash" style={styles.title} />
+                            </TouchableOpacity>
                         </View>
-                    }
+                    </TouchableOpacity>
+                }
                 } />
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    row:{
-        flexDirection:'row',
-        justifyContent:'space-between',
-        paddingVertical:20,
-        borderTopWidth:1,
-        borderColor:'gray'
+    row: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingVertical: 20,
+        borderTopWidth: 1,
+        borderColor: 'gray'
     },
-    title:{
-        fontSize:18
+    title: {
+        fontSize: 18
     },
-    icon:{
-        fontSize:24
+    icon: {
+        fontSize: 24
     }
 
 })
